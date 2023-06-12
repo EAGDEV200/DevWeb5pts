@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const clienteSchema = new mongoose.Schema({
 
   codigo: Number,
-  //fotoPerfil: String,
+  imagem: String,
   nomeCompleto: String,
-  endereço: String,
+  endereco: String,
   telefone: String,
   cpf: String,
   cartaoDeCredito: String,

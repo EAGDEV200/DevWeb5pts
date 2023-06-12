@@ -1,7 +1,6 @@
 const clienteModel = require('../models/clienteModel');
 const multer = require('multer');
 
-// Configuração do Multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "images/"); // Especifique o caminho onde deseja salvar as imagens
@@ -16,7 +15,7 @@ const upload = multer({ storage });
 class ClienteController {
   async cadastrarCliente(req, res) {
     try {
-      upload.single('fotoPerfil')(req, res, async (err) => {
+      upload.single('imagem')(req, res, async (err) => {
         if (err instanceof multer.MulterError) {
           console.log('Erro Multer:', err);
           return res.status(400).json({ error: 'Erro ao fazer o upload da imagem' });
@@ -26,7 +25,7 @@ class ClienteController {
         }
 
         const cliente = req.body;
-        cliente.fotoPerfil = req.file ? req.file.filename : '';
+        cliente.imagem = req.file ? req.file.filename : '';
 
         const resultado = await clienteModel.create(cliente);
         console.log('Cliente cadastrado:', resultado);
@@ -40,10 +39,7 @@ class ClienteController {
 
   async editarCliente(req, res) {
     try {
-      const codigo = req.params.codigo;
-      const cliente = req.body;
-
-      upload.single('fotoPerfil')(req, res, async (err) => {
+      upload.single('imagem')(req, res, async (err) => {
         if (err instanceof multer.MulterError) {
           console.log('Erro Multer:', err);
           return res.status(400).json({ error: 'Erro ao fazer o upload da imagem' });
@@ -52,16 +48,18 @@ class ClienteController {
           return res.status(500).json({ error: 'Erro interno do servidor' });
         }
 
+        const codigo = req.params.codigo;
+        const cliente = req.body;
         if (req.file) {
-          cliente.fotoPerfil = req.file.filename;
+          cliente.imagem = req.file.filename;
         }
 
         const resultado = await clienteModel.findOneAndUpdate(
           { codigo: codigo },
           cliente,
           { new: true }
-        ).select('+fotoPerfil');
-        
+        ).select('+imagem');
+
         console.log('Cliente editado:', resultado);
         res.status(200).json(resultado);
       });

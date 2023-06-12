@@ -6,7 +6,7 @@ const { ObjectId } = require('mongoose').Types;
 // Configuração do Multer para salvar as imagens
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "images/"); // Especifique o caminho onde deseja salvar as imagens
+    cb(null, "images/"); // Especifica o caminho onde deseja salvar as imagens
   },
   filename: (req, file, cb) => {
     const fileName = `${Date.now()}-${file.originalname}`; // Adicione um prefixo de data/hora ao nome do arquivo
@@ -53,7 +53,7 @@ class ProdutoController {
     try {
       const codigo = req.params.codigo;
       const produto = req.body;
-
+  
       upload.single('imagem')(req, res, async (err) => {
         if (err instanceof multer.MulterError) {
           console.log('Erro Multer:', err);
@@ -62,26 +62,26 @@ class ProdutoController {
           console.log('Erro interno do servidor:', err);
           return res.status(500).json({ error: 'Erro interno do servidor' });
         }
-
+  
         if (req.file) {
           produto.imagem = req.file.filename;
         }
-
+  
         if (produto.categoria && typeof produto.categoria === 'number') {
           // Converter o valor numérico para ObjectId
           produto.categoria = new ObjectId(produto.categoria);
         }
-
+  
         console.log('Produto atualizado:', produto);
-
+  
         const produtoAtualizado = await Produto.findOneAndUpdate(
           { codigo: codigo },
           produto,
-          { new: true, overwrite: true }
+          { new: true }
         );
-
+  
         console.log('Produto atualizado no banco:', produtoAtualizado);
-
+  
         res.status(200).json(produtoAtualizado);
       });
     } catch (error) {
@@ -89,6 +89,7 @@ class ProdutoController {
       res.status(500).json({ error: 'Erro ao editar o produto' });
     }
   }
+  
 
   async retornarListaProdutos(req, res) {
     try {

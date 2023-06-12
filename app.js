@@ -12,8 +12,9 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/indexRouter');
 var clienteRouter = require('./routes/clienteRouter');
-var categoriaRouter = require('./routes/categoriaRouter.js')
-var produtoRouter = require('./routes/produtoRouter')
+var categoriaRouter = require('./routes/categoriaRouter.js');
+var produtoRouter = require('./routes/produtoRouter');
+var pedidoRouter = require('./routes/pedidoRouter');
 
 var app = express();
 app.set('views', path.join(__dirname, 'views'));
@@ -36,6 +37,7 @@ app.use('/', indexRouter);
 app.use('/cliente', clienteRouter);
 app.use('/categoria', categoriaRouter)
 app.use('/produto', produtoRouter)
+app.use('/pedido', pedidoRouter)
 
 app.use(function(req, res, next) {
   next(createError(404));

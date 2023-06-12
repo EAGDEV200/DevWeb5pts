@@ -1,0 +1,14 @@
+[
+  {
+  "codigo": 1,
+  "nome": "Ração para Cães",
+  "imagem": "imagem.jpg",
+  "descricao": "Ração premium para cães de todas as raças",
+  "preco": 49.99,
+  "categoria": 1, 
+  "animal": "Cachorro",
+  "comentarioTexto": "Ótima ração, meu cachorro adora!",
+  "comentarioNota": 5,
+  "notaGeral": 4.5
+}
+]

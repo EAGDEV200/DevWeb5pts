@@ -1,0 +1,26 @@
+[
+  [
+    {
+      "codigo": 1,
+      "nome": "Alimentos",
+      "descricao": "Categoria de alimentos para pets"
+    },
+    {
+      "codigo": 2,
+      "nome": "Acessórios",
+      "descricao": "Categoria de acessórios para pets"
+    },
+    {
+      "codigo": 3,
+      "nome": "Higiene",
+      "descricao": "Categoria de produtos de higiene para pets"
+    },
+    {
+      "codigo": 4,
+      "nome": "Brinquedos",
+      "descricao": "Categoria de brinquedos para pets"
+    }
+  ]
+  
+  ]
+  

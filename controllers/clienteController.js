@@ -1,36 +1,18 @@
 const clienteModel = require('../models/clienteModel');
 const multer = require('multer');
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "images/"); // Especifique o caminho onde deseja salvar as imagens
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname); // Utilize o nome original do arquivo como nome de salvamento
-  }
-});
-
+const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 class ClienteController {
   async cadastrarCliente(req, res) {
     try {
-      upload.single('imagem')(req, res, async (err) => {
-        if (err instanceof multer.MulterError) {
-          console.log('Erro Multer:', err);
-          return res.status(400).json({ error: 'Erro ao fazer o upload da imagem' });
-        } else if (err) {
-          console.log('Erro interno do servidor:', err);
-          return res.status(500).json({ error: 'Erro interno do servidor' });
-        }
+      const cliente = req.body;
+      cliente.imagem = req.file ? req.file.buffer : null; // Salva o conteúdo binário da imagem no campo "imagem" do cliente
 
-        const cliente = req.body;
-        cliente.imagem = req.file ? req.file.filename : '';
-
-        const resultado = await clienteModel.create(cliente);
-        console.log('Cliente cadastrado:', resultado);
-        res.status(201).json(resultado);
-      });
+      const resultado = await clienteModel.create(cliente);
+      console.log('Cliente cadastrado:', resultado);
+      res.status(201).json(resultado);
     } catch (error) {
       console.log('Erro ao cadastrar o cliente:', error);
       res.status(500).json({ error: 'Erro ao cadastrar o cliente' });
@@ -39,30 +21,18 @@ class ClienteController {
 
   async editarCliente(req, res) {
     try {
-      upload.single('imagem')(req, res, async (err) => {
-        if (err instanceof multer.MulterError) {
-          console.log('Erro Multer:', err);
-          return res.status(400).json({ error: 'Erro ao fazer o upload da imagem' });
-        } else if (err) {
-          console.log('Erro interno do servidor:', err);
-          return res.status(500).json({ error: 'Erro interno do servidor' });
-        }
+      const codigo = req.params.codigo;
+      const cliente = req.body;
+      cliente.imagem = req.file ? req.file.buffer : null; // Salva o conteúdo binário da imagem no campo "imagem" do cliente
 
-        const codigo = req.params.codigo;
-        const cliente = req.body;
-        if (req.file) {
-          cliente.imagem = req.file.filename;
-        }
+      const resultado = await clienteModel.findOneAndUpdate(
+        { codigo: codigo },
+        cliente,
+        { new: true }
+      );
 
-        const resultado = await clienteModel.findOneAndUpdate(
-          { codigo: codigo },
-          cliente,
-          { new: true }
-        ).select('+imagem');
-
-        console.log('Cliente editado:', resultado);
-        res.status(200).json(resultado);
-      });
+      console.log('Cliente editado:', resultado);
+      res.status(200).json(resultado);
     } catch (error) {
       console.log('Erro ao editar o cliente:', error);
       res.status(500).json({ error: 'Erro ao editar o cliente' });

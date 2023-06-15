@@ -1,35 +1,30 @@
 [
-    {
-      "codigo": 1,
-      
-      "nomeCompleto": "João da Silva",
-      "endereço": "Rua Principal, 123",
-      "telefone": "(11) 99999-9999",
-      "cpf": "123.456.789-00",
-      "cartaoDeCredito": "1111222233334444",
-      "email": "joao.silva@example.com",
-      "senha": "senha123"
+  {
+    "codigo": 1,
+    "nomeCompleto": "Fulano de Tal",
+    "endereco": "Rua dos Exemplos, 123",
+    "telefone": "(00) 1234-5678",
+    "cpf": "123.456.789-00",
+    "cartaoCredito": {
+      "nome": "Fulano de Tal",
+      "numero": "1111222233334444",
+      "cvc": "123"
     },
-    {
-      "codigo": 2,
-      
-      "nomeCompleto": "Maria Souza",
-      "endereço": "Avenida Secundária, 456",
-      "telefone": "(11) 88888-8888",
-      "cpf": "987.654.321-00",
-      "cartaoDeCredito": "5555666677778888",
-      "email": "maria.souza@example.com",
-      "senha": "senha456"
+    "email": "fulano@example.com",
+    "senha": "senha123"
+  },
+  {
+    "codigo": 2,
+    "nomeCompleto": "Ciclano da Silva",
+    "endereco": "Av. dos Testes, 456",
+    "telefone": "(00) 9876-5432",
+    "cpf": "987.654.321-00",
+    "cartaoCredito": {
+      "nome": "Ciclano da Silva",
+      "numero": "5555666677778888",
+      "cvc": "456"
     },
-    {
-      "codigo": 3,
-      "nomeCompleto": "Pedro Oliveira",
-      "endereço": "Rua Principal, 789",
-      "telefone": "(11) 77777-7777",
-      "cpf": "456.789.123-00",
-      "cartaoDeCredito": "9999000011112222",
-      "email": "pedro.oliveira@example.com",
-      "senha": "senha789"
-    }
-  ]
-  
+    "email": "ciclano@example.com",
+    "senha": "senha456"
+  }
+]

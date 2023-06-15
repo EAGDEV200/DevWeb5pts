@@ -1,26 +1,22 @@
 [
-  [
-    {
-      "codigo": 1,
-      "nome": "Alimentos",
-      "descricao": "Categoria de alimentos para pets"
-    },
-    {
-      "codigo": 2,
-      "nome": "Acessórios",
-      "descricao": "Categoria de acessórios para pets"
-    },
-    {
-      "codigo": 3,
-      "nome": "Higiene",
-      "descricao": "Categoria de produtos de higiene para pets"
-    },
-    {
-      "codigo": 4,
-      "nome": "Brinquedos",
-      "descricao": "Categoria de brinquedos para pets"
-    }
-  ]
-  
-  ]
-  
+  {
+    "codigo": 1,
+    "nome": "Alimentação",
+    "descricao": "Produtos relacionados à alimentação de animais"
+  },
+  {
+    "codigo": 2,
+    "nome": "Higiene",
+    "descricao": "Produtos relacionados à higiene e cuidados com os animais"
+  },
+  {
+    "codigo": 3,
+    "nome": "Brinquedos",
+    "descricao": "Brinquedos para entretenimento dos animais"
+  },
+  {
+    "codigo": 4,
+    "nome": "Acessórios",
+    "descricao": "Acessórios diversos para animais de estimação"
+  }
+]

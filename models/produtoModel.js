@@ -33,16 +33,7 @@ const produtoSchema = new mongoose.Schema({
   }]
 });
 
-produtoSchema.virtual('notaGeral').get(function() {
-  if (this.comentarios.length === 0) {
-    return 0;
-  } else {
-    const somaNotas = this.comentarios.reduce((total, comentario) => {
-      return total + comentario.nota;
-    }, 0);
-    return somaNotas / this.comentarios.length;
-  }
-});
+
 
 const Produto = mongoose.model('Produto', produtoSchema);
 

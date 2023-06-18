@@ -1,7 +1,6 @@
 [
     {
     "codigo": 1,
-    "precoTotal": 50.99,
     "produtos": [
       {
         "produto": 1,
@@ -13,7 +12,23 @@
       }
     ],
     "cliente": 1,
-    "dataHora": "2023-06-12T10:30:00.000Z",
     "status": "Em andamento"
+  },
+  {
+    "codigo": 2,
+    "produtos": [
+      {
+        "produto": 2,
+        "quantidade": 3
+      },
+      {
+        "produto": 2,
+        "quantidade": 1
+      }
+    ],
+    "cliente": 2,
+    "status": "Aguardando Pagamento"
   }
+  
+  
 ]

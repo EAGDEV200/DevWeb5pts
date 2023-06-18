@@ -30,10 +30,12 @@ const produtoSchema = new mongoose.Schema({
     nota: {
       type: Number,
     }
-  }]
+  }],
+  notaGeral: {
+    type: Number,
+    default: 0
+  }
 });
-
-
 
 const Produto = mongoose.model('Produto', produtoSchema);
 

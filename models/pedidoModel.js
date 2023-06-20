@@ -19,8 +19,6 @@ const pedidoSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['Em andamento', 'Concluído', 'Cancelado'],
-    default: 'Em andamento'
   },
   precoTotal: {
     type: Number,

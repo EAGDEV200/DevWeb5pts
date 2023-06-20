@@ -1,0 +1,30 @@
+[
+  {
+    "codigo": 1,
+    "nomeCompleto": "Fulano de Tal",
+    "endereco": "Rua dos Exemplos, 123",
+    "telefone": "(00) 1234-5678",
+    "cpf": "123.456.789-00",
+    "cartaoCredito": {
+      "nome": "Fulano de Tal",
+      "numero": "1111222233334444",
+      "cvc": "123"
+    },
+    "email": "fulano@example.com",
+    "senha": "senha123"
+  },
+  {
+    "codigo": 2,
+    "nomeCompleto": "Ciclano da Silva",
+    "endereco": "Av. dos Testes, 456",
+    "telefone": "(00) 9876-5432",
+    "cpf": "987.654.321-00",
+    "cartaoCredito": {
+      "nome": "Ciclano da Silva",
+      "numero": "5555666677778888",
+      "cvc": "456"
+    },
+    "email": "ciclano@example.com",
+    "senha": "senha456"
+  }
+]

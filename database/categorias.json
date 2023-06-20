@@ -1,0 +1,22 @@
+[
+  {
+    "codigo": 1,
+    "nome": "Alimentação",
+    "descricao": "Produtos relacionados à alimentação de animais"
+  },
+  {
+    "codigo": 2,
+    "nome": "Higiene",
+    "descricao": "Produtos relacionados à higiene e cuidados com os animais"
+  },
+  {
+    "codigo": 3,
+    "nome": "Brinquedos",
+    "descricao": "Brinquedos para entretenimento dos animais"
+  },
+  {
+    "codigo": 4,
+    "nome": "Acessórios",
+    "descricao": "Acessórios diversos para animais de estimação"
+  }
+]

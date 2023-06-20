@@ -1,0 +1,80 @@
+[
+  {
+    "codigo": 1,
+    "nome": "Ração para Cães",
+    "imagem": null,
+    "descricao": "Ração premium para cães de todas as raças",
+    "preco": 49.99,
+    "categoria": 1, 
+    "animal": "Cachorro",
+    "comentarios": [
+      {
+        "texto": "Ótimo produto!",
+        "nota": 5
+      },
+      {
+        "texto": "Meu cachorro adorou!",
+        "nota": 4
+      }
+    ]
+  },
+  {
+    "codigo": 2,
+    "nome": "Shampoo para Gatos",
+    "imagem": null,
+    "descricao": "Shampoo suave para gatos de pelo longo",
+    "preco": 19.99,
+    "categoria": 2, 
+    "animal": "Gato",
+    "comentarios": [
+      {
+        "texto": "Cheiro agradável",
+        "nota": 4
+      },
+      {
+        "texto": "Deixa o pelo macio",
+        "nota": 5
+      }
+    ]
+  },
+  {
+    "codigo": 3,
+    "nome": "Coleira para Cães",
+    "imagem": null,
+    "descricao": "Coleira ajustável para cães de todos os tamanhos",
+    "preco": 29.99,
+    "categoria": 1,
+    "animal": "Cachorro",
+    "comentarios": [
+      {
+        "texto": "Excelente qualidade!",
+        "nota": 5
+      },
+      {
+        "texto": "Meu cão ficou muito estiloso com essa coleira",
+        "nota": 4
+      }
+    ]
+  },
+  {
+    "codigo": 4,
+    "nome": "Arranhador para Gatos",
+    "imagem": null,
+    "descricao": "Arranhador resistente para gatos afiarem as unhas",
+    "preco": 39.99,
+    "categoria": 2,
+    "animal": "Gato",
+    "comentarios": [
+      {
+        "texto": "Meus gatos adoraram!",
+        "nota": 5
+      },
+      {
+        "texto": "Evita que meus móveis sejam arranhados",
+        "nota": 4
+      }
+    ]
+  }
+  
+  
+]
